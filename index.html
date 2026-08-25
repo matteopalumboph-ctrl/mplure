@@ -72,6 +72,21 @@
   .film figcaption{margin-top:12px;font-size:11px;letter-spacing:.24em;text-transform:uppercase;
                    color:var(--mute)}
 
+
+  /* ---------- dalla reference alla campagna ---------- */
+  .method{display:grid;gap:clamp(28px,4vw,56px);margin-top:clamp(30px,4vw,54px)}
+  .pair{display:grid;grid-template-columns:1fr 1fr;gap:clamp(10px,1.4vw,20px);align-items:start}
+  .pair figure{margin:0;overflow:hidden}
+  .pair img{width:100%;height:auto;display:block}
+  .pair .tag{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--mute);
+             margin-top:10px;display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+  .pair .tag b{font-weight:400;color:var(--ink)}
+  .pair .from img{background:#fff}
+  .arrow{grid-column:1/-1;font-family:var(--serif);font-size:12px;letter-spacing:.24em;
+         text-transform:uppercase;color:var(--mute);text-align:center;margin-top:-4px}
+  @media (max-width:820px){.pair{grid-template-columns:1fr;gap:18px}}
+  @media print{.pair{break-inside:avoid;page-break-inside:avoid}}
+
   /* ---------- offers ---------- */
   .offers{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(20px,3vw,44px);
           margin-top:clamp(30px,4vw,50px)}
@@ -206,7 +221,15 @@
 </section>
 
 <section>
-  <span class="num">04 — SELECTED WORK</span>
+  <span class="num">04 — METHOD</span>
+  <h2>Dal vostro packshot a una campagna</h2>
+  <div class="body reveal"><p>Non serve uno shooting: serve la foto che avete già. Il packshot su fondo bianco che usate per l&#x27;e-commerce contiene tutto quello che ci occorre — forma, colore, materiale, cuciture, finiture. Da lì costruiamo il mondo intorno al prodotto, che resta identico a com&#x27;è.</p></div>
+  <div class="method stagger"><div class="pair"><figure class="from"><img src="img/method-1-reference.jpg" alt="Reference: Costume intero, packshot e-commerce" loading="lazy"><div class="tag"><span>Reference cliente</span><b>Costume intero, packshot e-commerce</b></div></figure><figure><img src="img/method-1-campaign.jpg" alt="Key visual: Roccia lavica, luce di fine giornata" loading="lazy"><div class="tag"><span>Key visual MPLURE</span><b>Roccia lavica, luce di fine giornata</b></div></figure></div>
+<div class="pair"><figure class="from"><img src="img/method-2-reference.jpg" alt="Reference: Occhiale da sole, packshot su fondo bianco" loading="lazy"><div class="tag"><span>Reference cliente</span><b>Occhiale da sole, packshot su fondo bianco</b></div></figure><figure><img src="img/method-2-campaign.jpg" alt="Key visual: Cemento, sole radente" loading="lazy"><div class="tag"><span>Key visual MPLURE</span><b>Cemento, sole radente</b></div></figure></div></div>
+</section>
+
+<section>
+  <span class="num">05 — SELECTED WORK</span>
   <h2>Campagne</h2>
   <div class="work">
   <div class="work-head">
@@ -245,7 +268,7 @@
 </section>
 
 <section>
-  <span class="num">05 — MOTION</span>
+  <span class="num">06 — MOTION</span>
   <h2>Ogni campagna si muove</h2>
   <div class="body reveal"><p>Ogni campagna nasce come immagini e film nella stessa produzione, dallo stesso mondo. Il film non è un progetto separato con un budget separato: è la stessa campagna, in movimento.</p></div>
   <div class="films stagger"><figure class="film"><video src="media/franchi.mp4" muted loop playsinline preload="metadata"></video><figcaption>Elisabetta Franchi — fashion film</figcaption></figure>
@@ -255,7 +278,7 @@
 </section>
 
 <section>
-  <span class="num">06 — HOW IT WORKS</span>
+  <span class="num">07 — HOW IT WORKS</span>
   <h2>Quattro passaggi</h2>
   <div class="rows stagger"><div class="row"><div class="k step">01 Reference</div><div class="v">Ci mandate il prodotto, le reference e le eventuali linee guida di brand. Una call, trenta minuti.</div></div>
 <div class="row"><div class="k step">02 Concept</div><div class="v">Concept creativo, art direction e mondo visivo, approvati prima che la produzione inizi.</div></div>
@@ -264,7 +287,7 @@
 </section>
 
 <section>
-  <span class="num">07 — ENGAGEMENTS</span>
+  <span class="num">08 — ENGAGEMENTS</span>
   <h2>Come lavoriamo insieme</h2>
   <div class="offers stagger"><div class="offer"><h3>MPLURE PRODUCT VISUAL</h3><div class="price">da €750</div><p>3 visual premium · 3 concept · formati advertising e social · post-produzione · 1 round di revisione</p></div>
 <div class="offer"><h3>MPLURE AI CAMPAIGN</h3><div class="price">da €2.500</div><p>Concept creativo · art direction · 6 key visual · 2 ambientazioni narrative · 3–5 formati social · 1 film breve · color grading · 2 round di revisione</p></div>
@@ -273,7 +296,7 @@
 </section>
 
 <section>
-  <span class="num">08 — WHY MPLURE</span>
+  <span class="num">09 — WHY MPLURE</span>
   <h2>Cosa cambia</h2>
   <div class="rows stagger"><div class="row"><div class="k">Velocità</div><div class="v">Prima consegna in 5–7 giorni invece di quattro-sei settimane.</div></div>
 <div class="row"><div class="k">Costo</div><div class="v">Una campagna completa nell&#x27;ordine di una singola giornata di shooting.</div></div>
