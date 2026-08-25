@@ -77,6 +77,23 @@
   @media (max-width:820px){.work-film{grid-template-columns:1fr}}
   @media print{.work-film{break-inside:avoid} .work-film video{max-height:70mm}}
 
+
+  /* ---------- audio dei film ---------- */
+  .film{position:relative}
+  .sound{position:absolute;right:12px;bottom:12px;z-index:5;display:flex;align-items:center;gap:7px;
+         padding:8px 12px;border:0;cursor:pointer;background:rgba(10,10,10,.55);color:#fff;
+         font:inherit;font-size:9px;letter-spacing:.22em;text-transform:uppercase;
+         backdrop-filter:blur(6px);opacity:0;transition:opacity .35s,background .25s}
+  .film:hover .sound,.sound:focus-visible,.sound.on{opacity:1}
+  .sound:hover{background:rgba(10,10,10,.8)}
+  .sound .bars{display:inline-flex;align-items:flex-end;gap:2px;height:9px}
+  .sound .bars i{width:2px;background:#fff;height:3px;display:block;transition:height .25s}
+  .sound.on .bars i:nth-child(1){height:5px}
+  .sound.on .bars i:nth-child(2){height:9px}
+  .sound.on .bars i:nth-child(3){height:6px}
+  @media (hover:none){.sound{opacity:1}}
+  @media print{.sound{display:none}}
+
   /* ---------- motion ---------- */
   .films{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.2vw,30px);
          margin-top:clamp(30px,4vw,54px);align-items:start}
@@ -377,10 +394,40 @@
 
   // 4. i film partono da soli quando entrano nello schermo, si fermano quando escono
   var films = [].slice.call(document.querySelectorAll('.film'));
+  var audioOn = false;   // una sola traccia audio alla volta in tutta la pagina
+
   films.forEach(function(f){
     var v = f.querySelector('video');
     if(!v) return;
+    // l'autoplay dei browser richiede il muto: si parte muti e l'audio si accende a mano
     v.muted = true; v.loop = true; v.playsInline = true; v.removeAttribute('controls');
+
+    var btn = document.createElement('button');
+    btn.className = 'sound';
+    btn.type = 'button';
+    btn.setAttribute('aria-label', 'Attiva audio');
+    btn.innerHTML = '<span class="bars"><i></i><i></i><i></i></span><span class="lbl">audio</span>';
+    f.appendChild(btn);
+
+    btn.addEventListener('click', function(e){
+      e.stopPropagation();
+      var accendo = v.muted;
+      // spegne l'audio di tutti gli altri: due film che suonano insieme sono rumore
+      films.forEach(function(o){
+        var ov = o.querySelector('video'); if(!ov) return;
+        ov.muted = true;
+        var ob = o.querySelector('.sound');
+        if(ob){ ob.classList.remove('on'); ob.setAttribute('aria-label','Attiva audio'); }
+      });
+      if(accendo){
+        v.muted = false;
+        if(v.paused) v.play();
+        btn.classList.add('on');
+        btn.setAttribute('aria-label', 'Disattiva audio');
+      }
+      audioOn = accendo;
+    });
+
     f.addEventListener('click', function(){
       if(v.paused){ v.play(); } else { v.pause(); f.classList.remove('playing'); }
     });
@@ -392,7 +439,11 @@
       if(e.isIntersecting){
         var p = v.play();
         if(p && p.then) p.then(function(){ f.classList.add('playing'); }).catch(function(){});
-      } else { v.pause(); f.classList.remove('playing'); }
+      } else {
+        v.pause(); v.muted = true; f.classList.remove('playing');
+        var b = f.querySelector('.sound');
+        if(b){ b.classList.remove('on'); b.setAttribute('aria-label','Attiva audio'); }
+      }
     });
   }, {threshold:.45});
   films.forEach(function(f){ vObs.observe(f); });
