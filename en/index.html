@@ -65,6 +65,18 @@
   .status{display:inline-block;border:1px solid var(--rule);padding:5px 10px;letter-spacing:.16em;
           font-size:10px;text-transform:uppercase;color:var(--mute);margin-top:16px}
 
+
+  /* ---------- film del case study ---------- */
+  .work-film{margin-top:clamp(14px,1.8vw,24px);display:grid;
+             grid-template-columns:minmax(0,42%) 1fr;gap:clamp(14px,2vw,28px);align-items:start}
+  .work-film video{width:100%;height:auto;display:block;background:var(--ink)}
+  .work-film .cap{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--mute);
+                  padding-top:6px;max-width:36ch;line-height:1.9}
+  .work-film .cap b{display:block;font-weight:400;letter-spacing:.02em;text-transform:none;
+                    font-size:clamp(14px,1.15vw,17px);color:var(--ink);margin-bottom:8px}
+  @media (max-width:820px){.work-film{grid-template-columns:1fr}}
+  @media print{.work-film{break-inside:avoid} .work-film video{max-height:70mm}}
+
   /* ---------- motion ---------- */
   .films{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.2vw,30px);
          margin-top:clamp(30px,4vw,54px);align-items:start}
@@ -247,6 +259,7 @@
 <figure><img src="../img/pucci-riviera-campaign-campaign-01.jpg" alt="Pucci campaign visual" loading="lazy"></figure>
 <figure><img src="../img/pucci-riviera-campaign-campaign-02.jpg" alt="Pucci campaign visual" loading="lazy"></figure>
 <figure><img src="../img/pucci-riviera-campaign-campaign-03.jpg" alt="Pucci campaign visual" loading="lazy"></figure></div>
+  <div class="work-film"><figure class="film"><video src="../media/pucci.mp4" muted loop playsinline preload="metadata"></video></figure><div class="cap"><b>The campaign film</b>46 vertical seconds, thirteen scenes, hard cuts. Cut from the same world as the stills, in the same run.</div></div>
 </div>
 <div class="work">
   <div class="work-head">
@@ -264,6 +277,7 @@
 <figure><img src="../img/adidas-concrete-campaign-campaign-01.jpg" alt="Adidas campaign visual" loading="lazy"></figure>
 <figure><img src="../img/adidas-concrete-campaign-campaign-02.jpg" alt="Adidas campaign visual" loading="lazy"></figure>
 <figure><img src="../img/adidas-concrete-campaign-campaign-03.jpg" alt="Adidas campaign visual" loading="lazy"></figure></div>
+  <div class="work-film"><figure class="film"><video src="../media/adidas.mp4" muted loop playsinline preload="metadata"></video></figure><div class="cap"><b>The campaign film</b>13 seconds in 4:5, five scenes. Same light, same concrete, same production day as the photographs.</div></div>
 </div>
 </section>
 
