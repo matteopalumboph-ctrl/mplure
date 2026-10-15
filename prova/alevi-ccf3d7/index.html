@@ -54,7 +54,11 @@ footer a{text-decoration:none}
 .big{display:inline-block;margin-top:34px;font-family:var(--serif);font-size:clamp(30px,4vw,58px);line-height:1.1;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.45);padding-bottom:6px}
 .big:hover{border-color:#fff}
 @media (max-width:760px){.gal{grid-template-columns:1fr}}
-@media (max-width:760px){.top{position:absolute;mix-blend-mode:normal;color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.5)}}</style>
+@media (max-width:760px){.top{position:absolute;mix-blend-mode:normal;color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.5)}}.film{background:#0b0b0b;color:#fff;border-top:0;display:grid;grid-template-columns:1fr minmax(0,420px);gap:clamp(28px,5vw,80px);align-items:center}
+.film .num{color:rgba(255,255,255,.6)}.film .lead{color:#d9d5ce}
+.film video{width:100%;height:auto;aspect-ratio:9/16;background:#000;display:block}
+@media (max-width:760px){.film{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
 <header class="top"><a href="https://matteopalumboph-ctrl.github.io/mplure/?utm_source=ig&amp;utm_medium=social&amp;utm_content=link_in_bio">Matteo Palumbo</a><span>Prova · Alevì Milano</span></header>
@@ -87,15 +91,24 @@ footer a{text-decoration:none}
 <section class="full"><img src="penelope-03.jpg?v=10" alt="Lei chiude il cinturino delle Penelope, il piede sul paraurti cromato"></section>
 <section class="full"><img src="penelope-04.jpg?v=10" alt="Seduta sui gradini di un palazzo milanese, le Penelope in primo piano"></section>
 
+<section class="film">
+  <div>
+    <span class="num">03 — Il film</span>
+    <h2>La stessa mattina, in movimento.</h2>
+    <p class="lead">Un breve film verticale, pensato per reel e storie: la portiera aperta, il cinturino chiuso al volo, i gradini al primo sole. La scarpa resta la vostra anche quando si muove.</p>
+  </div>
+  <video src="penelope-film.mp4" poster="penelope-film.jpg" controls playsinline preload="metadata"></video>
+</section>
+
 <section class="site">
-  <span class="num">03 — Il resto del mio lavoro</span>
+  <span class="num">04 — Il resto del mio lavoro</span>
   <h2>Campagne complete e film, costruiti intorno al prodotto.</h2>
   <p class="lead">Qui trovate la mia presentazione, con i mondi che ho costruito per altri marchi.</p>
   <a class="big" href="https://matteopalumboph-ctrl.github.io/mplure/?utm_source=ig&amp;utm_medium=social&amp;utm_content=link_in_bio">matteopalumboph-ctrl.github.io/mplure</a>
 </section>
 
 <section>
-  <span class="num">04 — Se la direzione vi convince</span>
+  <span class="num">05 — Se la direzione vi convince</span>
   <div class="cta">
     <div>
       <h2>Penelope e il resto della collezione, nella loro Milano.</h2>
