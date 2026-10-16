@@ -77,9 +77,10 @@ WORKS = [
 ]
 
 FILMS = [
-    ("film-sandals", "Sandali gioiello, Milano all'alba", "Jewelled sandals, Milan at dawn", True),
-    ("film-watch", "Orologio da mare, una cala all'Elba", "Dive watch, a cove on Elba", True),
-    ("film-silk", "Pigiama di seta, sogno a occhi aperti", "Silk pyjamas, a daydream", True),
+    ("film-maculata-2", "Maculata, ep. II — Il vello", "Maculata, ep. II — The Fleece", True),
+    ("film-maculata-4", "Maculata, ep. IV — Silk Road", "Maculata, ep. IV — Silk Road", True),
+    ("film-maculata-5", "Maculata, ep. V — Embers", "Maculata, ep. V — Embers", True),
+    ("film-maculata-7", "Maculata, ep. VII — Adieu", "Maculata, ep. VII — Adieu", True),
     ("film-gown", "Abito da sera — fashion film", "Evening gown — fashion film", False),
     ("film-jewels", "Alta gioielleria, in esterna", "Fine jewellery, on location", False),
     ("film-beach", "Beachwear, costa lavica", "Beachwear, lava coast", False),
