@@ -77,10 +77,13 @@ WORKS = [
 ]
 
 FILMS = [
-    ("film-gown", "Abito da sera — fashion film", "Evening gown — fashion film"),
-    ("film-jewels", "Alta gioielleria, in esterna", "Fine jewellery, on location"),
-    ("film-beach", "Beachwear, costa lavica", "Beachwear, lava coast"),
-    ("film-fragrance", "Fragranza, still life in movimento", "Fragrance, still life in motion"),
+    ("film-sandals", "Sandali gioiello, Milano all'alba", "Jewelled sandals, Milan at dawn", True),
+    ("film-watch", "Orologio da mare, una cala all'Elba", "Dive watch, a cove on Elba", True),
+    ("film-silk", "Pigiama di seta, sogno a occhi aperti", "Silk pyjamas, a daydream", True),
+    ("film-gown", "Abito da sera — fashion film", "Evening gown — fashion film", False),
+    ("film-jewels", "Alta gioielleria, in esterna", "Fine jewellery, on location", False),
+    ("film-beach", "Beachwear, costa lavica", "Beachwear, lava coast", False),
+    ("film-fragrance", "Fragranza, still life in movimento", "Fragrance, still life in motion", False),
 ]
 
 IT = dict(
@@ -377,7 +380,7 @@ JS = r"""
 
   var films=[].slice.call(document.querySelectorAll('.film'));
   films.forEach(function(f){var v=f.querySelector('video');if(!v)return;
-    v.muted=true;v.loop=true;v.playsInline=true;v.removeAttribute('controls');
+    v.muted=true;v.loop=true;v.playsInline=true;v.removeAttribute('controls');if(f.hasAttribute('data-noaudio'))return;
     var btn=document.createElement('button');btn.className='sound';btn.type='button';btn.setAttribute('aria-label','Audio');
     btn.innerHTML='<span class="bars"><i></i><i></i><i></i></span><span>audio</span>';f.appendChild(btn);
     btn.addEventListener('click',function(e){e.stopPropagation();var on=v.muted;
@@ -430,9 +433,10 @@ def render(T: dict) -> str:
   <div class="cap"><b>{esc(cat)}</b><span>{esc(desc)}</span></div>
 </div>''')
 
+    NA = ' data-noaudio="1"'
     films = "\n".join(
-        f'<figure class="film"><video src="{p}media/{f}.mp4" poster="{p}media/{f}-poster.jpg" muted loop playsinline preload="metadata" aria-label="{esc(it if L=="it" else en)}"></video><figcaption>{esc(it if L=="it" else en)}</figcaption></figure>'
-        for f, it, en in FILMS)
+        f'<figure class="film"{NA if na else ""}><video src="{p}media/{f}.mp4" poster="{p}media/{f}-poster.jpg" muted loop playsinline preload="metadata" aria-label="{esc(it if L=="it" else en)}"></video><figcaption>{esc(it if L=="it" else en)}</figcaption></figure>'
+        for f, it, en, na in FILMS)
     rows = lambda items, cls="": "\n".join(f'<div class="row"><div class="k{cls}">{esc(k)}</div><div class="v">{esc(v)}</div></div>' for k, v in items)
     offers = "\n".join(f'<div class="offer"><div class="n">0{i+1}</div><h3>{esc(k)}</h3><p>{esc(v)}</p></div>' for i, (k, v) in enumerate(T["offers"]))
     studio = "\n".join(f"<p>{esc(x)}</p>" for x in T["studio"])

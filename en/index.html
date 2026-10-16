@@ -292,7 +292,10 @@
 <section id="motion">
   <span class="num">03 — Motion</span>
   <div class="split reveal"><h2>Every campaign moves</h2><div class="body"><p>The film is not a separate project with a separate budget: it comes from the same world as the stills, in the same production. Vertical formats for social and retail. Here too, a selection of client work and concept studies, unnamed.</p></div></div>
-  <div class="films stagger"><figure class="film"><video src="../media/film-gown.mp4" poster="../media/film-gown-poster.jpg" muted loop playsinline preload="metadata" aria-label="Evening gown — fashion film"></video><figcaption>Evening gown — fashion film</figcaption></figure>
+  <div class="films stagger"><figure class="film" data-noaudio="1"><video src="../media/film-sandals.mp4" poster="../media/film-sandals-poster.jpg" muted loop playsinline preload="metadata" aria-label="Jewelled sandals, Milan at dawn"></video><figcaption>Jewelled sandals, Milan at dawn</figcaption></figure>
+<figure class="film" data-noaudio="1"><video src="../media/film-watch.mp4" poster="../media/film-watch-poster.jpg" muted loop playsinline preload="metadata" aria-label="Dive watch, a cove on Elba"></video><figcaption>Dive watch, a cove on Elba</figcaption></figure>
+<figure class="film" data-noaudio="1"><video src="../media/film-silk.mp4" poster="../media/film-silk-poster.jpg" muted loop playsinline preload="metadata" aria-label="Silk pyjamas, a daydream"></video><figcaption>Silk pyjamas, a daydream</figcaption></figure>
+<figure class="film"><video src="../media/film-gown.mp4" poster="../media/film-gown-poster.jpg" muted loop playsinline preload="metadata" aria-label="Evening gown — fashion film"></video><figcaption>Evening gown — fashion film</figcaption></figure>
 <figure class="film"><video src="../media/film-jewels.mp4" poster="../media/film-jewels-poster.jpg" muted loop playsinline preload="metadata" aria-label="Fine jewellery, on location"></video><figcaption>Fine jewellery, on location</figcaption></figure>
 <figure class="film"><video src="../media/film-beach.mp4" poster="../media/film-beach-poster.jpg" muted loop playsinline preload="metadata" aria-label="Beachwear, lava coast"></video><figcaption>Beachwear, lava coast</figcaption></figure>
 <figure class="film"><video src="../media/film-fragrance.mp4" poster="../media/film-fragrance-poster.jpg" muted loop playsinline preload="metadata" aria-label="Fragrance, still life in motion"></video><figcaption>Fragrance, still life in motion</figcaption></figure></div>
@@ -372,7 +375,7 @@
 
   var films=[].slice.call(document.querySelectorAll('.film'));
   films.forEach(function(f){var v=f.querySelector('video');if(!v)return;
-    v.muted=true;v.loop=true;v.playsInline=true;v.removeAttribute('controls');
+    v.muted=true;v.loop=true;v.playsInline=true;v.removeAttribute('controls');if(f.hasAttribute('data-noaudio'))return;
     var btn=document.createElement('button');btn.className='sound';btn.type='button';btn.setAttribute('aria-label','Audio');
     btn.innerHTML='<span class="bars"><i></i><i></i><i></i></span><span>audio</span>';f.appendChild(btn);
     btn.addEventListener('click',function(e){e.stopPropagation();var on=v.muted;

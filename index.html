@@ -292,7 +292,10 @@
 <section id="motion">
   <span class="num">03 — Motion</span>
   <div class="split reveal"><h2>Ogni campagna si muove</h2><div class="body"><p>Il film non è un progetto separato con un budget separato: nasce dallo stesso mondo delle immagini, nella stessa produzione. Formati verticali per social e punto vendita. Anche qui una selezione tra lavori per clienti e studi di concept, senza nomi.</p></div></div>
-  <div class="films stagger"><figure class="film"><video src="media/film-gown.mp4" poster="media/film-gown-poster.jpg" muted loop playsinline preload="metadata" aria-label="Abito da sera — fashion film"></video><figcaption>Abito da sera — fashion film</figcaption></figure>
+  <div class="films stagger"><figure class="film" data-noaudio="1"><video src="media/film-sandals.mp4" poster="media/film-sandals-poster.jpg" muted loop playsinline preload="metadata" aria-label="Sandali gioiello, Milano all'alba"></video><figcaption>Sandali gioiello, Milano all'alba</figcaption></figure>
+<figure class="film" data-noaudio="1"><video src="media/film-watch.mp4" poster="media/film-watch-poster.jpg" muted loop playsinline preload="metadata" aria-label="Orologio da mare, una cala all'Elba"></video><figcaption>Orologio da mare, una cala all'Elba</figcaption></figure>
+<figure class="film" data-noaudio="1"><video src="media/film-silk.mp4" poster="media/film-silk-poster.jpg" muted loop playsinline preload="metadata" aria-label="Pigiama di seta, sogno a occhi aperti"></video><figcaption>Pigiama di seta, sogno a occhi aperti</figcaption></figure>
+<figure class="film"><video src="media/film-gown.mp4" poster="media/film-gown-poster.jpg" muted loop playsinline preload="metadata" aria-label="Abito da sera — fashion film"></video><figcaption>Abito da sera — fashion film</figcaption></figure>
 <figure class="film"><video src="media/film-jewels.mp4" poster="media/film-jewels-poster.jpg" muted loop playsinline preload="metadata" aria-label="Alta gioielleria, in esterna"></video><figcaption>Alta gioielleria, in esterna</figcaption></figure>
 <figure class="film"><video src="media/film-beach.mp4" poster="media/film-beach-poster.jpg" muted loop playsinline preload="metadata" aria-label="Beachwear, costa lavica"></video><figcaption>Beachwear, costa lavica</figcaption></figure>
 <figure class="film"><video src="media/film-fragrance.mp4" poster="media/film-fragrance-poster.jpg" muted loop playsinline preload="metadata" aria-label="Fragranza, still life in movimento"></video><figcaption>Fragranza, still life in movimento</figcaption></figure></div>
@@ -372,7 +375,7 @@
 
   var films=[].slice.call(document.querySelectorAll('.film'));
   films.forEach(function(f){var v=f.querySelector('video');if(!v)return;
-    v.muted=true;v.loop=true;v.playsInline=true;v.removeAttribute('controls');
+    v.muted=true;v.loop=true;v.playsInline=true;v.removeAttribute('controls');if(f.hasAttribute('data-noaudio'))return;
     var btn=document.createElement('button');btn.className='sound';btn.type='button';btn.setAttribute('aria-label','Audio');
     btn.innerHTML='<span class="bars"><i></i><i></i><i></i></span><span>audio</span>';f.appendChild(btn);
     btn.addEventListener('click',function(e){e.stopPropagation();var on=v.muted;
