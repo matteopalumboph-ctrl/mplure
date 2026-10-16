@@ -62,6 +62,49 @@ footer a{text-decoration:none}
 .spec b{display:block;margin-top:6px;font-family:var(--serif);font-weight:400;font-size:26px;letter-spacing:0;text-transform:none;color:var(--ink)}
 footer span+span{text-transform:none;letter-spacing:0;font-size:12px;max-width:60ch;text-align:right}
 @media (max-width:760px){footer span+span{text-align:left}}
+
+.offer{background:var(--paper)}
+.packs{margin-top:clamp(36px,5vw,64px);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,1.6vw,22px)}
+.pack{border:1px solid var(--rule);padding:clamp(22px,2.4vw,34px);display:flex;flex-direction:column;background:#fbf9f5}
+.pack.hi{background:#24170f;color:#f4f1eb;border-color:#24170f}
+.pack .tag{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--mute)}
+.pack.hi .tag{color:rgba(244,241,235,.62)}
+.pack h3{font-family:var(--serif);font-weight:400;font-size:clamp(28px,2.6vw,38px);line-height:1.05;margin-top:14px}
+.pack .price{font-family:var(--serif);font-size:clamp(44px,4.4vw,64px);line-height:1;margin-top:22px;letter-spacing:-.02em}
+.pack .price small{font-family:var(--sans);font-size:12px;letter-spacing:.06em;color:var(--mute);margin-left:6px}
+.pack.hi .price small{color:rgba(244,241,235,.62)}
+.pack .was{font-size:13px;color:var(--mute);margin-top:8px}.pack.hi .was{color:rgba(244,241,235,.62)}
+.pack ul{list-style:none;margin-top:22px;padding-top:18px;border-top:1px solid var(--rule);display:grid;gap:10px;font-size:15px}
+.pack.hi ul{border-color:rgba(244,241,235,.18)}
+.pack li{padding-left:18px;position:relative}.pack li:before{content:"";position:absolute;left:0;top:.7em;width:8px;height:1px;background:currentColor;opacity:.6}
+.extra{margin-top:clamp(40px,5vw,64px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,64px)}
+.extra h4{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--mute);font-weight:500;margin-bottom:14px}
+.rows div{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--rule);font-size:15px}
+.rows b{font-family:var(--serif);font-weight:400;font-size:21px;white-space:nowrap}
+.terms{font-size:14px;color:var(--ink-2);display:grid;gap:9px}
+@media (max-width:900px){.packs{grid-template-columns:1fr}.extra{grid-template-columns:1fr}}
+
+.year{margin-top:clamp(14px,1.6vw,22px);display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(24px,4vw,64px);background:#24170f;color:#f4f1eb;padding:clamp(26px,3vw,44px)}
+.year .tag{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:rgba(244,241,235,.62)}
+.year h3{font-family:var(--serif);font-weight:400;font-size:clamp(32px,3.2vw,48px);line-height:1.04;margin-top:14px}
+.year p{margin-top:16px;color:#d9d5ce;max-width:52ch;font-size:15px}
+.year .price{font-family:var(--serif);font-size:clamp(48px,4.8vw,70px);line-height:1;letter-spacing:-.02em}
+.year .price small{font-family:var(--sans);font-size:12px;letter-spacing:.06em;color:rgba(244,241,235,.62);margin-left:6px}
+.year .was{font-size:13px;color:rgba(244,241,235,.62);margin-top:8px}
+.year ul{list-style:none;margin-top:18px;padding-top:16px;border-top:1px solid rgba(244,241,235,.18);display:grid;gap:9px;font-size:15px}
+.year li{padding-left:18px;position:relative}.year li:before{content:"";position:absolute;left:0;top:.7em;width:8px;height:1px;background:currentColor;opacity:.6}
+@media (max-width:900px){.year{grid-template-columns:1fr}}
+
+.single{margin-top:clamp(14px,1.6vw,22px);display:grid;grid-template-columns:minmax(0,1.3fr) repeat(3,minmax(0,1fr));gap:0;border:1px solid var(--rule);background:#fbf9f5}
+.single>div{padding:clamp(20px,2.2vw,30px)}
+.single .st .tag{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--mute)}
+.single h3{font-family:var(--serif);font-weight:400;font-size:clamp(26px,2.4vw,34px);line-height:1.05;margin-top:12px}
+.single .st p{margin-top:10px;font-size:14px;color:var(--ink-2);max-width:34ch}
+.single .sp{border-left:1px solid var(--rule);display:flex;flex-direction:column;justify-content:space-between;gap:18px}
+.single .sp span{font-size:13px;letter-spacing:.04em;color:var(--ink-2)}
+.single .sp b{font-family:var(--serif);font-weight:400;font-size:clamp(38px,3.6vw,52px);line-height:1;letter-spacing:-.02em}
+.single .sp.hi{background:#24170f;color:#f4f1eb;border-left-color:#24170f}.single .sp.hi span{color:rgba(244,241,235,.75)}
+@media (max-width:900px){.single{grid-template-columns:1fr}.single .sp{border-left:0;border-top:1px solid var(--rule);flex-direction:row;align-items:baseline}}
 </style>
 </head>
 <body>
@@ -109,6 +152,102 @@ footer span+span{text-transform:none;letter-spacing:0;font-size:12px;max-width:6
     <p class="lead">Un pesce rosso gira nella ciotola di ceramica sul comò, poi l'oro della seta e i bottoni. Lei attraversa la casa scalza. Quando si siede e chiude gli occhi, la luce dell'acqua entra nella stanza e corre sul legno, sulla pelle e sulla seta. In chiusura, la camicia lasciata sul letto.</p>
   </div>
   <video src="sexy-fish-gold-film.mp4?v=5" poster="sexy-fish-gold-film.jpg?v=5" controls playsinline preload="metadata"></video>
+</section>
+
+
+<section class="offer">
+  <span class="num">04 — La proposta</span>
+  <h2>Ogni stagione, ogni capo nella sua stanza.</h2>
+  <p class="lead">Lo stesso lavoro fatto sul Lucile Sexy Fish Gold, esteso a dieci capi per ogni uscita: quattro fotografie editoriali ambientate per ogni capo, pensate per la scheda prodotto e per i social, e un film breve che lo fa vivere. Ogni capo resta identico al vostro, stampa per stampa.</p>
+  <div class="packs">
+    <div class="pack">
+      <span class="tag">E-commerce ambientato</span>
+      <h3>Le fotografie</h3>
+      <div class="price">2.500 €<small>10 capi</small></div>
+      <div class="was">250 € a capo</div>
+      <ul>
+        <li>40 fotografie editoriali, 4 per capo</li>
+        <li>Ambienti, luce e casting coerenti in tutta la serie</li>
+        <li>Formati per scheda prodotto, feed e storie</li>
+        <li>Consegna in 4K</li>
+      </ul>
+    </div>
+    <div class="pack hi">
+      <span class="tag">Consigliato</span>
+      <h3>Fotografie e film</h3>
+      <div class="price">6.000 €<small>10 capi</small></div>
+      <div class="was">600 € a capo invece di 650 €</div>
+      <ul>
+        <li>Le 40 fotografie editoriali</li>
+        <li>10 mini spot da 15 secondi, uno per capo</li>
+        <li>Verticali 9:16 per Reels, TikTok e storie</li>
+        <li>In regalo le versioni 4:5 di tutti i 10 film</li>
+        <li>Musica libera da diritti inclusa</li>
+      </ul>
+    </div>
+    <div class="pack">
+      <span class="tag">Campagna</span>
+      <h3>La stagione</h3>
+      <div class="price">7.200 €<small>10 capi</small></div>
+      <div class="was">invece di 7.600 €</div>
+      <ul>
+        <li>Le 40 fotografie e i 10 mini spot</li>
+        <li>Uno spot di campagna da 30 secondi</li>
+        <li>Spot anche in 4:5 e 16:9</li>
+        <li>Un'idea che lega tutta la collezione</li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="single">
+    <div class="st">
+      <span class="tag">Un capo alla volta</span>
+      <h3>Il singolo capo.</h3>
+      <p>Per una nuova stampa, un'uscita fuori stagione o per cominciare da un capo solo.</p>
+    </div>
+    <div class="sp"><span>4 fotografie editoriali</span><b>300 €</b></div>
+    <div class="sp"><span>Mini spot da 15 secondi</span><b>400 €</b></div>
+    <div class="sp hi"><span>4 fotografie e mini spot</span><b>650 €</b></div>
+  </div>
+  <div class="year">
+    <div>
+      <span class="tag">Due collezioni l'anno</span>
+      <h3>L'anno, due destinazioni.</h3>
+      <p>Due campagne complete, una per stagione, ognuna in un luogo diverso: Tokyo come in questa prova, poi la destinazione che scegliete voi. Sono i viaggi che di solito chiedono troupe, modelle, voli e permessi; qui li costruiamo intorno ai vostri capi, con la stessa cura su ogni stampa.</p>
+    </div>
+    <div class="yp">
+      <div class="price">13.500 €<small>2 stagioni</small></div>
+      <div class="was">invece di 14.400 €, in due rate</div>
+      <ul>
+        <li>2 × «La stagione»: 80 fotografie, 20 mini spot, 2 spot di campagna da 30 secondi</li>
+        <li>Una destinazione nuova per ogni stagione</li>
+        <li>Stessa modella e stesso linguaggio in tutto l'anno, se lo volete</li>
+        <li>Prezzi bloccati per 12 mesi, anche per i capi in più e le nuove stampe</li>
+        <li>Pagamento in due rate, una per stagione</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="extra">
+    <div>
+      <h4>Su misura</h4>
+      <div class="rows">
+        <div><span>Spot da 30 secondi</span><b>1.500 €</b></div>
+        <div><span>Film da 45 a 60 secondi</span><b>2.400 €</b></div>
+        <div><span>Formato in più per video (4:5 o 16:9)</span><b>60 €</b></div>
+      </div>
+    </div>
+    <div>
+      <h4>Come funziona</h4>
+      <div class="terms">
+        <p>Per ogni capo servono le vostre foto di fronte, retro e dettagli: sono il riferimento per stampa, tessuto e finiture.</p>
+        <p>Prima consegna in 10 giorni lavorativi dall'arrivo del materiale. Due giri di correzioni inclusi per ogni capo.</p>
+        <p>Uso senza limiti di tempo su e-commerce, social e pubblicità digitale del marchio.</p>
+        <p>Musica libera da diritti inclusa; un brano commerciale si licenzia a parte.</p>
+        <p>50% all'ordine, 50% alla consegna. Prezzi validi 30 giorni.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
 <footer><span>Silence Please · Lucile Sexy Fish Gold</span><span>Immagini e film realizzati con strumenti di intelligenza artificiale. La musica del film è a titolo di esempio: i diritti appartengono ai rispettivi titolari.</span></footer>
